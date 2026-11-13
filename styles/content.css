@@ -1,0 +1,196 @@
+.prose img {
+  height: auto;
+}
+
+.prose mark {
+  border-radius: 0.2em;
+  padding: 0 0.15em;
+  color: inherit;
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.prose th,
+.prose td {
+  position: relative;
+  min-width: 4em;
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--muted);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: left;
+}
+
+.prose :is(th, td) > p {
+  margin: 0;
+}
+
+.prose ul[data-type='taskList'] {
+  padding-left: 0;
+  list-style: none;
+}
+
+.prose ul[data-type='taskList'] li {
+  display: flex;
+  gap: 0.6em;
+  padding-left: 0;
+}
+
+.prose ul[data-type='taskList'] li::marker {
+  content: '';
+}
+
+.prose ul[data-type='taskList'] li > label {
+  flex: none;
+  margin-top: 0.3em;
+  user-select: none;
+}
+
+.prose ul[data-type='taskList'] li > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.prose ul[data-type='taskList'] li > div > p {
+  margin: 0;
+}
+
+.prose ul[data-type='taskList'] input[type='checkbox'] {
+  width: 1em;
+  height: 1em;
+  accent-color: var(--primary);
+}
+
+.prose li[data-checked='true'] > div {
+  color: var(--muted-foreground);
+  text-decoration: line-through;
+}
+
+.prose details,
+.prose div[data-type='details'] {
+  margin: 1.25em 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6em 1em;
+}
+
+.prose summary {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.prose div[data-type='detailsContent'] > :first-child {
+  margin-top: 0.5em;
+}
+
+.prose div[data-type='detailsContent'] > :last-child {
+  margin-bottom: 0;
+}
+
+.prose :is(div[data-youtube-video], div[data-twitch-video]) {
+  margin: 1.5em 0;
+}
+
+.prose :is(div[data-youtube-video], div[data-twitch-video]) iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--muted);
+}
+
+.prose audio {
+  display: block;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+.prose :is(div[data-math='block'], div[data-type='block-math']) {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.prose .katex {
+  font-size: 1.05em;
+}
+
+.prose span[data-type='emoji'] {
+  font-family:
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+
+.prose span[data-type='emoji'] img {
+  display: inline;
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0;
+  vertical-align: -0.15em;
+}
+
+.prose pre code .hljs-comment,
+.prose pre code .hljs-quote {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.prose pre code :is(.hljs-keyword, .hljs-selector-tag, .hljs-doctag) {
+  color: #ff7b72;
+}
+
+.prose pre code :is(.hljs-string, .hljs-regexp, .hljs-template-tag) {
+  color: #a5d6ff;
+}
+
+.prose pre code :is(.hljs-number, .hljs-literal, .hljs-symbol) {
+  color: #79c0ff;
+}
+
+.prose pre code :is(.hljs-title, .hljs-section, .hljs-function .hljs-title) {
+  color: #d2a8ff;
+}
+
+.prose
+  pre
+  code
+  :is(.hljs-attr, .hljs-attribute, .hljs-variable, .hljs-property) {
+  color: #ffa657;
+}
+
+.prose pre code :is(.hljs-built_in, .hljs-type, .hljs-class .hljs-title) {
+  color: #ffa657;
+}
+
+.prose pre code :is(.hljs-name, .hljs-tag, .hljs-selector-class) {
+  color: #7ee787;
+}
+
+.prose pre code :is(.hljs-meta, .hljs-subst) {
+  color: #c9d1d9;
+}
+
+.prose pre code .hljs-addition {
+  color: #aff5b4;
+}
+
+.prose pre code .hljs-deletion {
+  color: #ffdcd7;
+}
+
+.prose :is(h2, h3, h4)[id] {
+  scroll-margin-top: 1.5rem;
+}

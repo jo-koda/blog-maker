@@ -1,0 +1,164 @@
+.tiptap {
+  min-height: 420px;
+  outline: none;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: var(--muted-foreground);
+}
+
+.tiptap img.ProseMirror-selectednode {
+  outline: 3px solid var(--ring);
+}
+
+.tiptap a {
+  cursor: text;
+}
+
+.tiptap .tableWrapper {
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+.tiptap .tableWrapper table {
+  display: table;
+  margin: 0;
+}
+
+.tiptap .selectedCell::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--ring);
+  content: '';
+  pointer-events: none;
+}
+
+.tiptap .column-resize-handle {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: -2px;
+  width: 4px;
+  background: var(--primary);
+  pointer-events: none;
+}
+
+.tiptap.resize-cursor {
+  cursor: col-resize;
+}
+
+.tiptap [data-resize-wrapper] {
+  max-width: 100%;
+}
+
+.tiptap [data-resize-wrapper] img {
+  max-width: 100%;
+  margin: 0;
+}
+
+.tiptap [data-resize-handle] {
+  z-index: 3;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--card);
+  border-radius: 3px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 120ms;
+}
+
+.tiptap [data-resize-wrapper]:hover [data-resize-handle],
+.tiptap .ProseMirror-selectednode [data-resize-handle] {
+  opacity: 1;
+}
+
+.tiptap [data-resize-handle='top-left'],
+.tiptap [data-resize-handle='bottom-right'] {
+  cursor: nwse-resize;
+}
+
+.tiptap [data-resize-handle='top-right'],
+.tiptap [data-resize-handle='bottom-left'] {
+  cursor: nesw-resize;
+}
+
+.tiptap div[data-type='details'] {
+  display: flex;
+  gap: 0.4em;
+}
+
+.tiptap div[data-type='details'] > button {
+  flex: none;
+  width: 1.4em;
+  height: 1.4em;
+  margin-top: 0.15em;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.tiptap div[data-type='details'] > button::before {
+  display: inline-block;
+  content: '▸';
+  transition: transform 120ms;
+}
+
+.tiptap div[data-type='details'].is-open > button::before {
+  transform: rotate(90deg);
+}
+
+.tiptap div[data-type='details'] > button:hover {
+  background: var(--muted);
+}
+
+.tiptap div[data-type='details'] > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.tiptap div[data-type='details']:not(.is-open) div[data-type='detailsContent'] {
+  display: none;
+}
+
+.tiptap .tiptap-mathematics-render--editable {
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.tiptap .tiptap-mathematics-render--editable:hover {
+  background: var(--accent);
+}
+
+.tiptap :is(.inline-math-error, .block-math-error) {
+  color: var(--destructive);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.tiptap
+  :is(div[data-youtube-video], div[data-twitch-video]).ProseMirror-selectednode
+  iframe,
+.tiptap div[data-type='block-math'].ProseMirror-selectednode {
+  outline: 3px solid var(--ring);
+}
+
+.tiptap .selection {
+  background: var(--ring);
+}
+
+.tiptap ul[data-type='taskList'] li > label input {
+  cursor: pointer;
+}
+
+.drag-handle {
+  transition: opacity 120ms;
+}
+
+.drag-handle[data-dragging='true'],
+.drag-handle:hover {
+  opacity: 1;
+}
